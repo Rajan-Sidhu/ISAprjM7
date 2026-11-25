@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MotionMind</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="user.html">MotionMind</a>
+      <div class="who">
+        <span id="who">Checking session…</span>
+        <a id="admin-link" href="admin.html" hidden>Admin</a>
+        <button id="logout" type="button">Log out</button>
+      </div>
+    </header>
+    <main>
+      <section class="panel">
+        <h2>Type a move</h2>
+        <form id="plan-form">
+          <label>
+            <span>What should the robot do?</span>
+            <textarea name="prompt" maxlength="500" required>wave hello, then pick up the block</textarea>
+          </label>
+          <button class="primary" type="submit">Plan move</button>
+        </form>
+        <p class="alert" id="plan-error" role="alert"></p>
+      </section>
+      <section class="panel">
+        <h2>Or use the camera</h2>
+        <p class="fine">Punch, block, or dodge. One second of video picks the move.</p>
+        <video id="camera" class="camera" autoplay muted playsinline hidden></video>
+        <div class="camera-actions">
+          <button id="camera-start" type="button">Turn camera on</button>
+          <button class="primary" id="camera-read" type="button" disabled>Read my move</button>
+        </div>
+        <p class="alert" id="camera-error" role="alert"></p>
+      </section>
+      <section class="panel">
+        <h2>Result</h2>
+        <p class="summary" id="summary">Nothing yet.</p>
+        <div class="arm-card">
+          <svg id="arm" viewBox="40 40 250 180" role="img" aria-label="Arm preview">
+            <rect x="108" y="188" width="84" height="16" rx="6" fill="#d6d3d1"></rect>
+            <ellipse id="base-dial" cx="150" cy="188" rx="28" ry="10" fill="none" stroke="#c2410c" stroke-width="3"></ellipse>
+            <line id="upper" x1="150" y1="168" x2="230" y2="168" stroke="#1c1917" stroke-width="8" stroke-linecap="round"></line>
+            <line id="fore" x1="230" y1="168" x2="280" y2="140" stroke="#c2410c" stroke-width="7" stroke-linecap="round"></line>
+            <line id="grip-a" stroke="#15803d" stroke-width="4" stroke-linecap="round"></line>
+            <line id="grip-b" stroke="#15803d" stroke-width="4" stroke-linecap="round"></line>
+            <circle cx="150" cy="168" r="7" fill="#c2410c"></circle>
+            <circle id="elbow-joint" r="5" fill="#1c1917"></circle>
+          </svg>
+          <div class="readout">
+            <div>Base <b id="sv-base">90°</b></div>
+            <div>Shoulder <b id="sv-shoulder">90°</b></div>
+            <div>Elbow <b id="sv-elbow">90°</b></div>
+            <div>Gripper <b id="sv-gripper">40°</b></div>
+          </div>
+          <button id="replay" type="button" disabled>Play</button>
+        </div>
+        <div class="matches" id="matches"></div>
+        <div class="steps" id="steps"></div>
+      </section>
+      <section class="panel">
+        <h2>Saved</h2>
+        <div class="saved" id="saved"><p class="empty">None yet.</p></div>
+        <p class="fine" id="model-note"></p>
+        <p id="usage">No calls yet.</p>
+        <ul class="stack" id="recent"></ul>
+      </section>
+    </main>
+  </div>
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/user.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+Project title and description: MotionMind is an AI motion planner for a four-servo desktop robot. A person describes a movement in ordinary language, or records about one second on a webcam. The API embeds that input with a locally hosted copy of VideoPrism and matches it to motions for the base, shoulder, elbow, and gripper. The client plays the resulting servo plan. Accounts, saved plans, and API usage are stored in separate database tables. Passwords are stored as bcrypt hashes. Login is our own email and password check.
+
+AI model: https://huggingface.co/google/videoprism-lvt-base-f16r288
+Weight file on this computer: backend/models/videoprism-lvt-base-f16r288/flax_lvt_base_f16r288_repeated.npz
+
+Client URL: http://localhost:5173
+Test account: john@john.com / 123
+
+Administrator access: http://localhost:5173/admin.html
+Test account: admin@admin.com / 111
+
+AI demonstration URL: http://localhost:5173/user.html
+Sign in first, then type a move or use the camera.
+
+Role	Email	Password
+User	john@john.com	123
+Administrator	admin@admin.com	111

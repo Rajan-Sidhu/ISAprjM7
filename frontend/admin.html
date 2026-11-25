@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MotionMind — Admin</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="admin.html">MotionMind <span>Admin</span></a>
+      <div class="who">
+        <span id="who">Checking session…</span>
+        <a href="user.html">User page</a>
+        <button id="logout" type="button">Log out</button>
+      </div>
+    </header>
+    <main>
+      <p class="alert" id="admin-error" role="alert"></p>
+      <section id="dashboard" hidden>
+        <div class="stats">
+          <div class="stat"><span>Users</span><b id="total-users">0</b></div>
+          <div class="stat"><span>Plans</span><b id="total-plans">0</b></div>
+          <div class="stat"><span>API calls</span><b id="total-requests">0</b></div>
+        </div>
+        <section class="panel">
+          <h2>Users</h2>
+          <table>
+            <thead>
+              <tr><th>Email</th><th>Role</th><th>Plans</th><th>API calls</th><th>Joined</th></tr>
+            </thead>
+            <tbody id="user-rows"></tbody>
+          </table>
+        </section>
+        <section class="panel">
+          <h2>Calls by endpoint</h2>
+          <table>
+            <thead><tr><th>Method</th><th>Endpoint</th><th>Count</th></tr></thead>
+            <tbody id="endpoint-rows"></tbody>
+          </table>
+        </section>
+        <section class="panel">
+          <h2>Recent calls</h2>
+          <table>
+            <thead><tr><th>When</th><th>Who</th><th>Call</th><th>Status</th></tr></thead>
+            <tbody id="recent-rows"></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
