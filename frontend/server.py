@@ -29,5 +29,5 @@ class DualStackServer(ThreadingHTTPServer):
 if __name__ == "__main__":
     os.chdir(ROOT)
     server = DualStackServer(("::", PORT), Handler)
-    print(f"MotionMind client at http://localhost:{PORT}", flush=True)
+    print(f"Motion Fighter client at http://localhost:{PORT}", flush=True)
     server.serve_forever()

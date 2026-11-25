@@ -1,4 +1,4 @@
-# MotionMind API
+# Motion Fighter API
 
 Flask server for accounts, motion plans, and usage statistics. See the repository README for the full run steps.
 
@@ -43,6 +43,6 @@ The planner calls the model's text encoder. That encoder was trained together wi
 
 ## Database
 
-SQLite file: `backend/instance/motionmind.db`
+SQLite file: `backend/instance/motionfighter.db`
 
 Tables: `users`, `motion_plans`, `api_usage`. Password columns store bcrypt hashes.

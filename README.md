@@ -1,6 +1,6 @@
-# MotionMind — Group Mr7
+# Motion Fighter — Group Mr7
 
-MotionMind is a small AI service for a four-servo desktop robot. A person describes a movement in ordinary language. The API embeds that sentence with a local copy of [google/videoprism-lvt-base-f16r288](https://huggingface.co/google/videoprism-lvt-base-f16r288) and turns the closest matches into a timed plan for the base, shoulder, elbow, and gripper.
+Motion Fighter is a small AI service for a four-servo desktop robot. A person describes a movement in ordinary language. The API embeds that sentence with a local copy of [google/videoprism-lvt-base-f16r288](https://huggingface.co/google/videoprism-lvt-base-f16r288) and turns the closest matches into a timed plan for the base, shoulder, elbow, and gripper.
 
 This continues the feasibility study (four servos, Python, Flask, HTML/CSS, and a database). Login is our own email and password check. The course does not allow Google, GitHub, or other third-party sign-in. Milestone 1 plans the motion. It does not drive the microcontroller yet.
 

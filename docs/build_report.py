@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = Path(__file__).resolve().parent
-DB = ROOT / "backend" / "instance" / "motionmind.db"
+DB = ROOT / "backend" / "instance" / "motionfighter.db"
 
 INK = (28, 24, 20)
 MUTED = (90, 78, 66)
@@ -33,7 +33,7 @@ def architecture():
     title = font(36, True)
     label = font(26, True)
     small = font(20)
-    draw.text((48, 36), "MotionMind — Milestone 1 architecture", fill=INK, font=title)
+    draw.text((48, 36), "Motion Fighter — Milestone 1 architecture", fill=INK, font=title)
     draw.text(
         (48, 86),
         "Two origins. Auth, planning, admin, and the model are modules inside the API.",
@@ -103,7 +103,7 @@ def erd():
     title = font(36, True)
     label = font(26, True)
     small = font(20)
-    draw.text((48, 32), "MotionMind tables", fill=INK, font=title)
+    draw.text((48, 32), "Motion Fighter tables", fill=INK, font=title)
 
     tables = [
         (
@@ -158,7 +158,7 @@ def records():
     title = font(34, True)
     head = font(22, True)
     body = font(18)
-    draw.text((40, 28), "Sample rows from backend/instance/motionmind.db", fill=INK, font=title)
+    draw.text((40, 28), "Sample rows from backend/instance/motionfighter.db", fill=INK, font=title)
     draw.text(
         (40, 74),
         "password_hash is a bcrypt string. The plaintext passwords are not stored.",
@@ -239,7 +239,7 @@ def report(architecture_path):
     pdf.add_page()
     pdf.set_font("Helvetica", "B", 16)
     pdf.multi_cell(
-        0, 8, "MotionMind: AI Motion Planner for a Four-Servo Robot",
+        0, 8, "Motion Fighter: AI Motion Planner for a Four-Servo Robot",
         align="L", new_x="LMARGIN", new_y="NEXT",
     )
     pdf.set_font("Helvetica", "", 11)
@@ -265,7 +265,7 @@ def report(architecture_path):
     pdf.multi_cell(
         0,
         5.4,
-        "MotionMind continues our feasibility study for a four-servo desktop robot. A person describes a movement in ordinary language. The API embeds that sentence with a local copy of google/videoprism-lvt-base-f16r288 and compares it with a catalog of motions. The closest matches become timed angles for the base, shoulder, elbow, and gripper, which the client plays on a simple arm. Accounts, saved plans, and API calls live in separate tables. Passwords are bcrypt hashes. The session is an HttpOnly JWT cookie issued by our own server. We did not use OAuth, because this course requires our own authentication. Milestone 1 plans the motion. It does not drive the microcontroller yet.",
+        "Motion Fighter continues our feasibility study for a four-servo desktop robot. A person describes a movement in ordinary language. The API embeds that sentence with a local copy of google/videoprism-lvt-base-f16r288 and compares it with a catalog of motions. The closest matches become timed angles for the base, shoulder, elbow, and gripper, which the client plays on a simple arm. Accounts, saved plans, and API calls live in separate tables. Passwords are bcrypt hashes. The session is an HttpOnly JWT cookie issued by our own server. We did not use OAuth, because this course requires our own authentication. Milestone 1 plans the motion. It does not drive the microcontroller yet.",
         align="L", new_x="LMARGIN", new_y="NEXT",
     )
     pdf.ln(1)

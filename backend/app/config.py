@@ -16,7 +16,7 @@ class Config:
         "JWT_SECRET", "dev-only-change-me-before-any-real-deployment"
     )
     SQLALCHEMY_DATABASE_URI = os.getenv(
-        "DATABASE_URL", "sqlite:///instance/motionmind.db"
+        "DATABASE_URL", "sqlite:///instance/motionfighter.db"
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     CLIENT_ORIGINS = _origins(

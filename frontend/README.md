@@ -1,4 +1,4 @@
-# MotionMind client
+# Motion Fighter client
 
 Static pages served on their own origin so the browser treats them as separate from the API.
 
